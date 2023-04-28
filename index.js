@@ -16,7 +16,6 @@ body {  width:800;
 <h1>SAYA</h1>`;
 const server = http.createServer((request, response) => { 
   response.writeHead(200, {"Content-Type": "text/html"});
-  msg = msg1:
   msg += " URI : " + request.url; 
   msg += "</body></html>"
   response.end(msg);});
