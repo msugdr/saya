@@ -2,8 +2,7 @@
 //  Test for Azure
 /////////////////////////////////////////////////////////////
 const http = require('http');
-var msg="";
-var msg1=`<html>
+var msg=`<html>
 <head>
 <style>
 body {  width:800;
