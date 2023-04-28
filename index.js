@@ -35,12 +35,12 @@ const fetchPromise = fetch(url);
 fetchPromise
    .then((response) => response.text())
    .then((data) =>{
-       sz= data;
+       
    });
 
 
 
-  msg += " URI : " + request.url + sz; 
+  msg += " URI : " + request.url; 
   msg += "</body></html>"
   response.end(msg);});
 const port = process.env.PORT || 1337;
