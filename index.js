@@ -31,7 +31,7 @@ body {  width:800;
 <h1>SAYA</h1>`
 var sz;
 let url = "http://ip.jsontest.com/";
-const fetchPromise = fetch(url);
+//const fetchPromise = fetch(url);
 
 
 
