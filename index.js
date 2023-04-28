@@ -32,11 +32,6 @@ body {  width:800;
 var sz;
 let url = "http://ip.jsontest.com/";
 const fetchPromise = fetch(url);
-fetchPromise
-   .then((response) => response.text())
-   .then((data) =>{
-       
-   });
 
 
 
