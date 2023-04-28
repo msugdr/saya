@@ -29,8 +29,18 @@ body {  width:800;
 </head>
 <body>
 <h1>SAYA</h1>`
+var sz;
+let url = "http://ip.jsontest.com/";
+const fetchPromise = fetch(url);
+fetchPromise
+   .then((response) => response.text())
+   .then((data) =>{
+       sz= data;
+   });
 
-  msg += " URI : " + request.url; 
+
+
+  msg += " URI : " + request.url + sz; 
   msg += "</body></html>"
   response.end(msg);});
 const port = process.env.PORT || 1337;
