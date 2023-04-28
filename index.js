@@ -32,7 +32,7 @@ body {  width:800;
 var sz;
 let url = "http://ip.jsontest.com/";
 //const fetchPromise = fetch(url);
-
+let xhr = new XMLHttpRequest();
 
 
   msg += " URI : " + request.url; 
