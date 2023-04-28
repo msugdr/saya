@@ -6,7 +6,7 @@ const http = require('http');
 var msg=`<html>
 <head>
 <style>
-body {  width:800;
+body {  width:800px;
         background-color:pink;
         margin : auto;
 }
