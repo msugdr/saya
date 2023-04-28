@@ -2,6 +2,7 @@
 //  Test for Azure
 /////////////////////////////////////////////////////////////
 const http = require('http');
+/*
 var msg=`<html>
 <head>
 <style>
@@ -13,8 +14,22 @@ body {  width:800;
 </head>
 <body>
 <h1>SAYA</h1>`;
+*/
 const server = http.createServer((request, response) => { 
   response.writeHead(200, {"Content-Type": "text/html"});
+        
+var msg=`<html>
+<head>
+<style>
+body {  width:800;
+        background-color:pink;
+        margin : auto;
+}
+</style>
+</head>
+<body>
+<h1>SAYA</h1>`
+
   msg += " URI : " + request.url; 
   msg += "</body></html>"
   response.end(msg);});
