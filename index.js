@@ -28,7 +28,7 @@ var htmlForm = `
 </div>
 `
 var sz="dumm";
-fs.readFileSync('doc.txt','utf8', function(err, data) {sz=data});
+fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
 
 const server = http.createServer((request, response) => { 
   response.writeHead(200, {"Content-Type": "text/html"});        
