@@ -10,6 +10,11 @@ body {  width:800px;
         background-color:pink;
         margin : auto;
 }
+main {
+ width:800px;
+        background-color:pink;
+        margin : auto;
+]
 </style>
 </head>
 <body>
@@ -21,13 +26,20 @@ const server = http.createServer((request, response) => {
 var msg=`<html>
 <head>
 <style>
-body {  width:800;
+body {  width:800px;
         background-color:pink;
         margin : auto;
 }
+main {
+ width:600px;
+        background-color:black;
+        color:white;
+        margin : auto;
+]
 </style>
 </head>
 <body>
+<main>
 <h1>SAYA</h1>`
 var sz;
 let url = "http://ip.jsontest.com/";
@@ -36,7 +48,7 @@ let url = "http://ip.jsontest.com/";
 
 
   msg += " URI : " + request.url; 
-  msg += "</body></html>"
+  msg += "</main></body></html>"
   response.end(msg);});
 const port = process.env.PORT || 1337;
 server.listen(port);
