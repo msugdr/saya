@@ -37,7 +37,8 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, {"Content-Type": "text/html"});        
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
-        msg += "<div>request.url : " + request.url.trim + "</div>\n"; 
+        req=request.url.trim();
+        msg += "<div>request.url : " + request.url.trim() + "</div>\n"; 
         msg += "<div>typeof request.url : " + (typeof request.url) + "</div>\n"; 
         msg += "<div>request.url.length : " + request.url.length + "</div>\n"; 
         [key,value] = request.url.split("=");
