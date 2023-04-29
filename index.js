@@ -27,7 +27,7 @@ var htmlForm = `
 </form>
 </div>
 `
-var sz="dumm";
+var sz;
 //fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
 
 const server = http.createServer((request, response) => { 
