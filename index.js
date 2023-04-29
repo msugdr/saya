@@ -29,9 +29,9 @@ var htmlForm = `
 `
 const server = http.createServer((request, response) => { 
   response.writeHead(200, {"Content-Type": "text/html"});        
-        var msg="<html><head>" + htmlStyle + "</head>";
-        msg += "<body><main><h1>SAYA</h1>";
-        msg += " URI : " + request.url; 
+        var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
+        msg += "<body><main><h1>SAYA's HomePage</h1>";
+        msg += " URI : " + decodeURIComponent(request.url); 
         msg += htmlForm;
         msg += "</main></body></html>"
         response.end(msg);});
