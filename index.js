@@ -27,14 +27,17 @@ var htmlForm = `
 </form>
 </div>
 `
+var sz="dumm";
+fs.readFileSync('doc.txt','utf8', function(err, data) {sz=data});
+
 const server = http.createServer((request, response) => { 
   response.writeHead(200, {"Content-Type": "text/html"});        
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage</h1>";
         [key,value] = request.url.split("=");
-        msg += "<div>QUERY : " + decodeURIComponent(value) + "</div>\n"; 
+        msg += "<div>QUERY : " + decodeURIComponent(value) + sz + "</div>\n"; 
 
-        fs.readFileSync('doc.txt','utf8', function(err, data) {msg += "<div>" + data + "</div>"});
+  
 
         msg += htmlForm;
         msg += "</main></body></html>"
