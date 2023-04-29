@@ -34,7 +34,7 @@ var doc=[];
 const server = http.createServer((request, response) => { 
 
         fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
-        doc=sz.split('\n');
+//        doc=sz.split('\n');
         response.writeHead(200, {"Content-Type": "text/html"});        
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
