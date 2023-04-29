@@ -22,6 +22,7 @@ main {
 var htmlForm = `
 <div>
 <form method="get" action="https://chodoin-saya.azurewebsites.net/">
+<!-- <form method="get" action="http://localhost:1337/"> -->
 <input type="text" name="query">
 <input type="submit" value="SUBMIT">
 </form>
@@ -42,9 +43,9 @@ const server = http.createServer((request, response) => {
         msg += "<div>typeof request.url : " + (typeof req) + "</div>\n"; 
         msg += "<div>request.url.length : " + req.length + "</div>\n"; 
         [key,value] = req.split("=");
- //       value=decodeURI(value);
-        if (value) {
-                fs.appendFile('doc.txt', value + '\n' , function(err) {});
+        value=decodeURIComponent(value);
+        if (value !=="undefined") {
+                fs.appendFile('doc.txt', value + "\n" , function(err) {});
         }
         msg += "<div>QUERY : " + value + "</div>\n"; 
         msg += "<pre>" + sz + "</pre>\n";
