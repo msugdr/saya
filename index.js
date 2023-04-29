@@ -26,15 +26,18 @@ const server = http.createServer((request, response) => {
 var msg=`<html>
 <head>
 <style>
-body {  width:800px;
+body {  
+        width:800px;
         background-color:pink;
         margin : auto;
 }
 main {
- width:600px;
+        width:600px;
+        height:600px;
         background-color:black;
         color:white;
         margin : auto;
+        padding:10px;
 ]
 </style>
 </head>
