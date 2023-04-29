@@ -2,6 +2,7 @@
 //  Test for Azure
 /////////////////////////////////////////////////////////////
 const http = require('http');
+var request = require('request');
 var fs = require('fs');
 var htmlStyle=`
 <style>
