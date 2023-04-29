@@ -38,7 +38,7 @@ const server = http.createServer((request, response) => {
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
         [key,value] = request.url.split("=");
         value=decodeURIComponent(value);
-        fs.appendFile('doc.txt', value +'\n', function(err) {});
+        fs.appendFile('doc.txt', value , function(err) {});
 
         msg += "<div>QUERY : " + value + "</div>\n"; 
         msg += "<pre>" + sz + "</pre>\n";
