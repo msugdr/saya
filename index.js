@@ -2,7 +2,7 @@
 //  Test for Azure
 /////////////////////////////////////////////////////////////
 const http = require('http');
-
+var fs = require('fs');
 var htmlStyle=`
 <style>
 body {  width:800px;
