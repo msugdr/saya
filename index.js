@@ -32,7 +32,10 @@ const server = http.createServer((request, response) => {
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage</h1>";
         [key,value] = request.url.split("=");
-        msg += "QUERY : " + decodeURIComponent(value); 
+        msg += "<div>QUERY : " + decodeURIComponent(value) + "<div>\n"; 
+
+        fs.readFile('demofile1.html', function(err, data) {msg += data});
+
         msg += htmlForm;
         msg += "</main></body></html>"
         response.end(msg);});
