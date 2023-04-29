@@ -22,7 +22,7 @@ main {
 var htmlForm = `
 <div>
 <form method="get" action="https://chodoin-saya.azurewebsites.net/">
-<input type="text">
+<input type="text" name="query">
 <input type="submit" value="SUBMIT">
 </form>
 </div>
