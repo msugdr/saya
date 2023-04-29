@@ -38,7 +38,7 @@ const server = http.createServer((request, response) => {
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
         [key,value] = request.url.split("=");
-        value=decodeURIComponent(value);
+        value=decodeURIComponent(value).trim();
         if (value) {
                 fs.appendFile('doc.txt', value + '\n' , function(err) {});
         }
