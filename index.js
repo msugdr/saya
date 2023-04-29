@@ -2,7 +2,6 @@
 //  Test for Azure
 /////////////////////////////////////////////////////////////
 const http = require('http');
-var request = require('request');
 var fs = require('fs');
 var htmlStyle=`
 <style>
@@ -38,6 +37,7 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, {"Content-Type": "text/html"});        
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
+        msg += "<div>request.url : " + request.url + "</div>\n"; 
         [key,value] = request.url.split("=");
         value=decodeURI(value);
         if (value) {
