@@ -34,7 +34,7 @@ const server = http.createServer((request, response) => {
         [key,value] = request.url.split("=");
         msg += "<div>QUERY : " + decodeURIComponent(value) + "<div>\n"; 
 
-        fs.readFile('demofile1.html', function(err, data) {msg += data});
+        fs.readFile('doc.txt', function(err, data) {msg += data});
 
         msg += htmlForm;
         msg += "</main></body></html>"
