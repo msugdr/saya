@@ -35,8 +35,8 @@ const server = http.createServer((request, response) => {
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main><h1>SAYA's HomePage</h1>";
         [key,value] = request.url.split("=");
-        msg += "<div>QUERY : " + decodeURIComponent(value) + sz + "</div>\n"; 
-
+        msg += "<div>QUERY : " + decodeURIComponent(value) + "</div>\n"; 
+        msg += "<pre>" + sz + "</dpre\n";
   
 
         msg += htmlForm;
