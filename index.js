@@ -39,6 +39,7 @@ const server = http.createServer((request, response) => {
         msg += "<body><main><h1>SAYA's HomePage!</h1>";
         msg += "<div>request.url : " + request.url + "</div>\n"; 
         msg += "<div>typeof request.url : " + (typeof request.url) + "</div>\n"; 
+        msg += "<div>request.url.length : " + request.url.length + "</div>\n"; 
         [key,value] = request.url.split("=");
         value=decodeURI(value);
         if (value) {
