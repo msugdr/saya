@@ -55,6 +55,6 @@ const server = http.createServer((request, response) => {
 //        msg += htmlForm;
         msg += "</main></body></html>"
         response.end(msg);});
-//const port = process.env.PORT || 1337;
-server.listen(process.env.PORT ||= 1337);
+const port = process.env.PORT || 1337;
+server.listen(port);
 console.log("Server running at http://localhost:%d", port);
