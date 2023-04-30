@@ -39,17 +39,17 @@ const server = http.createServer((request, response) => {
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
         msg += "<body><main>";
 //        msg += "<h1>SAYA's HomePage!</h1>";
-//        req=request.url.replace("\l","");
+        req=request.url.replace("\l","");
 //        msg += "<div>request.url : " + req + "</div>\n"; 
 //        msg += "<div>typeof request.url : " + (typeof req) + "</div>\n"; 
 //        msg += "<div>request.url.length : " + req.length + "</div>\n"; 
-//        [key,value] = req.split("=");
+        [key,value] = req.split("=");
 //        value=decodeURIComponent(value);
-//        if (value !=="undefined") {
-//                fs.appendFile('doc.txt', value + "\n" , function(err) {});
-//        }
+        if (value !=="undefined") {
+                fs.appendFile('doc.txt', value + "\n" , function(err) {});
+        }
 //        msg += "<div>QUERY : " + value + "</div>\n"; 
-        msg += "<pre>sz = " + sz + "</pre>\n";
+        msg += "<pre>" + sz + "</pre>\n";
   
 
 //        msg += htmlForm;
