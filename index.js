@@ -28,12 +28,12 @@ var htmlForm = `
 </form>
 </div>
 `
-var sz;
+//var sz;
 //var doc=[];
 //fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
 
 const server = http.createServer((request, response) => { 
-
+var sz;
         fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
         response.writeHead(200, {"Content-Type": "text/html"});        
         var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
@@ -49,7 +49,7 @@ const server = http.createServer((request, response) => {
 //                fs.appendFile('doc.txt', value + "\n" , function(err) {});
 //        }
 //        msg += "<div>QUERY : " + value + "</div>\n"; 
-        msg += "<pre>" + sz + "</pre>\n";
+        msg += "<pre>sz = " + sz + "</pre>\n";
   
 
 //        msg += htmlForm;
