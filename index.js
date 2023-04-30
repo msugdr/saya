@@ -44,7 +44,7 @@ const server = http.createServer((request, response) => {
 //        msg += "<div>typeof request.url : " + (typeof req) + "</div>\n"; 
 //        msg += "<div>request.url.length : " + req.length + "</div>\n"; 
         [key,value] = req.split("=");
-//        value=decodeURIComponent(value);
+        value=decodeURIComponent(value);
         if (value !=="undefined") {
                 fs.appendFile('doc.txt', value + "\n" , function(err) {});
         }
