@@ -1,8 +1,7 @@
 /////////////////////////////////////////////////////////////
 //  Test for Azure
 /////////////////////////////////////////////////////////////
-const http = require('http');
-var fs = require('fs');
+/*
 var htmlStyle=`
 <style>
 body {  width:800px;
@@ -28,13 +27,16 @@ var htmlForm = `
 </form>
 </div>
 `
-var sz;
+*/
+const http = require('http');
+////var fs = require('fs');
+////var sz;
 //var doc=[];
 //fs.readFile('doc.txt','utf8', function(err, data) {sz=data});
 
 const server = http.createServer((request, response) => { 
 
-        fs.readFile('index.html','utf8', function(err, data) {msg=data});
+////        fs.readFile('index.html','utf8', function(err, data) {msg=data});
         response.writeHead(200, {"Content-Type": "text/html"});        
  //       var msg="<html>\n<head>\n<meta charset='utf8'>\n" + htmlStyle + "</head>";
 //        msg += "<body><main>";
@@ -53,7 +55,7 @@ const server = http.createServer((request, response) => {
   
 
 //        msg += htmlForm;
-//        msg += "</main></body></html>"
+        msg += "<html><body>I live you</body></html>"
         response.end(msg);});
 const port = process.env.PORT || 1337;
 server.listen(port);
