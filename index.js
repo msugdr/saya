@@ -17,14 +17,14 @@ const server = http.createServer((request, response) => {
         [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/text"}); 
         if (ext == 'html') {
-                value=request.url;
+                value="  HTML:" + request.url;
                 fs.appendFile('doc.txt', value + "\n" , function(err) {});
             filenameX = filename;
             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
             html += `filename=${filename} filenameX=${filenameX}`;
             response.end(html);
         } else {
-                value=request.url;
+                value="noHTML:" + request.url;
                 fs.appendFile('doc.txt', value + "\n" , function(err) {});
             filenameX="doc.txt";
             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
