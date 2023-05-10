@@ -19,7 +19,7 @@ const server = http.createServer((request, response) => {
         if (ext == 'html') {
                 value="  HTML:" + request.url;
                 fs.appendFile('doc.txt', value + "\n" , function(err) {});
-            filenameX = filename;
+            filenameX = "index.html";
             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
             html += `filename=${filename} filenameX=${filenameX}`;
             response.end(html);
