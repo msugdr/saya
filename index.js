@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
         [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/html"});      
         fs.readFile("index.html",'utf8', function(err, data) {html=data});
-        msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
+        msg = `EDIT: method = ${request.method}, filename = ${filename}`;
         response.end(msg + html);
 }
 });
