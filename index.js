@@ -10,14 +10,15 @@ const server = http.createServer((request, response) => {
     if (request.method === 'GET'){
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
-        if (ext.match(/html|css|javascript/) ){
+//        if (ext.match(/html|css|javascript/) ){
         response.writeHead(200, {"Content-Type": "text/plain"});
       
         fs.readFile("index.html",'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
         msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
         response.end(msg + html);
-    }}
+//    }
+}
 });
 const port = process.env.PORT || 1337;
 server.listen(port);
