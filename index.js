@@ -6,6 +6,7 @@ const fs = require('fs');
 var html;
 var dummy;
 var filename;
+var msg;
 const server = http.createServer((request, response) => { 
     if (request.method === 'GET'){
         [dummy,filename]=request.url.split("/");
@@ -14,7 +15,7 @@ const server = http.createServer((request, response) => {
       
         fs.readFile("index.html",'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
-        msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
+        html += "filename";
         response.end(html);
 }
 });
