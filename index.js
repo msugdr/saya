@@ -17,6 +17,7 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, {"Content-Type": "text/text"}); 
 //        filenameX="index.html";
         filenameX="doc.txt";
+        if (ext == 'html') {filenameX = filename;
         fs.readFile(filenameX,'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
         html += `filename=${filename} filenameX=${filenameX}`;
