@@ -14,7 +14,7 @@ const server = http.createServer((request, response) => {
         fs.readFile('doc.txt','utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
         msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
-        response.end(msg);
+        response.end(html);
     }
 });
 const port = process.env.PORT || 1337;
