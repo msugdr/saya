@@ -11,7 +11,8 @@ const server = http.createServer((request, response) => {
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/html"});
-        html=fs.readFileSync(filename,'utf8');
+        fs.readFile('doc.txt','utf8', function(err, data) {html=data});
+        //html=fs.readFileSync(filename,'utf8');
         msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
         response.end(msg);
     }
