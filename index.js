@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/html"});      
-        fs.readFile("index.html",'utf8', function(err, data) {html=data});
+        fs.readFile(filename,'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
         html += filename;
         response.end(html);
