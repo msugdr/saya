@@ -29,7 +29,7 @@ const server = http.createServer((request, response) => {
             filenameX="doc.txt";
             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
             html += `filename=${filename} filenameX=${filenameX}`;
-            response.end(html);
+//            response.end(html);
         }
 }
 });
