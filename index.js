@@ -8,8 +8,10 @@ var dummy;
 var filename;
 const server = http.createServer((request, response) => { 
     if (request.method === 'GET'){
+        [dummy,filename]=request.url.split("/");
+        [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/html"});        
-        msg = `<html><body>I love you, ${request.method}r</body></html>`;
+        msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
         response.end(msg);
     }
 });
