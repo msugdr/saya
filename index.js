@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////
 //  Test for Azure
 /////////////////////////////////////////////////////////////
+        //html=fs.readFileSync(filename,'utf8');
 const http = require('http');
 const fs = require('fs');
 var html;
@@ -15,13 +16,14 @@ const server = http.createServer((request, response) => {
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
         response.writeHead(200, {"Content-Type": "text/text"}); 
-//        filenameX="index.html";
-        filenameX="doc.txt";
         if (ext == 'html') {
             filenameX = filename;
-        } else {        
-             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
-        //html=fs.readFileSync(filename,'utf8');
+            fs.readFile(filenameX,'utf8', function(err, data) {html=data});
+            html += `filename=${filename} filenameX=${filenameX}`;
+            response.end(html);
+        } else {
+            filenameX="doc.txt";
+            fs.readFile(filenameX,'utf8', function(err, data) {html=data});
             html += `filename=${filename} filenameX=${filenameX}`;
             response.end(html);
         }
