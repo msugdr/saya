@@ -27,9 +27,10 @@ const server = http.createServer((request, response) => {
                 value="noHTML:" + request.url;
                 fs.appendFile('doc.txt', value + "\n" , function(err) {});
             filenameX="doc.txt";
+            filenameX="index.html";
             fs.readFile(filenameX,'utf8', function(err, data) {html=data});
             html += `filename=${filename} filenameX=${filenameX}`;
-//            response.end(html);
+            response.end(html);
         }
 }
 });
