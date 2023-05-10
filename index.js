@@ -14,7 +14,7 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, {"Content-Type": "text/html"});      
         fs.readFile("index.html",'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
-        html += "filename";
+        html += filename;
         response.end(html);
 }
 });
