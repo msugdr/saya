@@ -10,7 +10,7 @@ const server = http.createServer((request, response) => {
     if (request.method === 'GET'){
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
-        response.writeHead(200, {"Content-Type": "text/plain"});      
+        response.writeHead(200, {"Content-Type": "text/html"});      
         fs.readFile("index.html",'utf8', function(err, data) {html=data});
         msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
         response.end(msg + html);
