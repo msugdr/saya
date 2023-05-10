@@ -13,7 +13,7 @@ const server = http.createServer((request, response) => {
         if (ext.match(/html|css|javascript/) ){
         response.writeHead(200, {"Content-Type": "text/plain"});
       
-        fs.readFile(filename,'utf8', function(err, data) {html=data});
+        fs.readFile("index.html",'utf8', function(err, data) {html=data});
         //html=fs.readFileSync(filename,'utf8');
         msg = `<html><body>I love you, ${request.method}, ${filename}</body></html>`;
         response.end(msg + html);
