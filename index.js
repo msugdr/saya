@@ -15,14 +15,14 @@ const server = http.createServer((request, response) => {
             fn = filename;
             response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile(fn,'utf8', function(err, data) {html=data});
-            msg = `EDIT-4a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+            msg = `EDIT-4.1a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg + html);
         } else {
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile(fn,'utf8', function(err, data) {html=data});
-            msg = `EDIT-4b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
-            response.end(msg + html);
+            msg = `EDIT-4.1b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+            response.end(msg);
         }
 }
 });
