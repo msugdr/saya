@@ -20,7 +20,7 @@ const server = http.createServer((request, response) => {
         } else {
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
-            fs.readFile(fn,'utf8', function(err, data) {html=data});
+        //    fs.readFile(fn,'utf8', function(err, data) {html=data});
             msg = `EDIT-4.1b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg);
         }
@@ -29,3 +29,4 @@ const server = http.createServer((request, response) => {
 const port = process.env.PORT || 1337;
 server.listen(port);
 // EDIT-4.1  response.end(msg + html); -> response.end(msg);
+// EDIT-5  del fs.readFile(fn,'utf8', function(err, data) {html=data});
