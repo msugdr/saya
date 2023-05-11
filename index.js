@@ -20,9 +20,9 @@ const server = http.createServer((request, response) => {
         } else {
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
-        //    fs.readFile(fn,'utf8', function(err, data) {html=data});
+            fs.readFile(fn,'utf8', function(err, data) {html=data});
             msg = `EDIT-3.3b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
-            response.end(msg);
+            response.end(msg + html);
         }
 }
 });
