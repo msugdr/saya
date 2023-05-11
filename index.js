@@ -25,7 +25,7 @@ const server = http.createServer((request, response) => {
                     html=fs.readFileSync(filename,'utf8');
                     response.end(html);
                     break;
-                case "jpg":
+                case "jpg","png":
                     response.writeHead(200, {"Content-Type": `img/${ext}`});
                     var image = fs.readFileSync(filename, "binary");
                     response.end(image,"binary");
@@ -49,3 +49,5 @@ server.listen(port);
 // EDIT-6.21 complete 6
 // EDIT-7 add case jpg
 // EDIT-7.1 add jpg file
+// EDIT-7.2 readFileSync
+// EDIT-7.3 add png
