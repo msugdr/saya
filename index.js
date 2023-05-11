@@ -10,13 +10,19 @@ const server = http.createServer((request, response) => {
     if (request.method === 'GET'){
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
-//        if (ext === "html"){
+        if (ext === "html"){
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile(fn,'utf8', function(err, data) {html=data});
-            msg = `EDIT-2.2:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+            msg = `EDIT-2.3a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg + html);
-//        }
+        } else {
+            fn="index.html";
+            response.writeHead(200, {"Content-Type": "text/html"});      
+            fs.readFile(fn,'utf8', function(err, data) {html=data});
+            msg = `EDIT-2.3b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+            response.end(msg + html);
+        }
 }
 });
 const port = process.env.PORT || 1337;
