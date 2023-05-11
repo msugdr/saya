@@ -16,15 +16,18 @@ const server = http.createServer((request, response) => {
                     response.writeHead(200, {"Content-Type": "text/html"});      
                     fs.readFile(fn,'utf8', function(err, data) {
                         html=data;
-                        msg = `EDIT-6.21a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                        msg = `EDIT-7a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                         response.end(msg + html);           
                     });
                     break;
-                case "jpeg":
+                case "jpg":
+                    response.writeHead(200, {"Content-Type": `img/${ext}`});
+                    var image = fs.readFileSync(filename, "binary");
+                    response.end(image,"binary");
                     break;
                 default:
                     response.writeHead(200, {"Content-Type": "text/html"});      
-                    msg = `EDIT-6.21b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                    msg = `EDIT-7b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                     response.end(msg);
             }
     }
@@ -39,3 +42,4 @@ server.listen(port);
 // EDIT-6 change if to switch
 // EDIT-6.1 complete 6
 // EDIT-6.21 complete 6
+// EDIT-7 add case jpg
