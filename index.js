@@ -16,7 +16,7 @@ const server = http.createServer((request, response) => {
             response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile(fn,'utf8', function(err, data) {
                 html=data;
-                msg = `EDIT-5.1a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                msg = `EDIT-5.2a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                 response.end(msg + html);
             
             });
@@ -25,8 +25,8 @@ const server = http.createServer((request, response) => {
         } else {
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
-            fs.readFile(fn,'utf8', function(err, data) {html=data});
-            msg = `EDIT-5.1b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+    //        fs.readFile(fn,'utf8', function(err, data) {html=data});
+            msg = `EDIT-5.2b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg);
         }
 }
@@ -35,4 +35,4 @@ const port = process.env.PORT || 1337;
 server.listen(port);
 // EDIT-4.1  response.end(msg + html); -> response.end(msg);
 // EDIT-5  del fs.readFile(fn,'utf8', function(err, data) {html=data});
-// EDIT-5.1
+// EDIT-5.2 response is written inside call back function of fs.readFile
