@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
         [file,ext]=filename.split(".");
         switch (ext) {
             case "html":
-                response.writeHead(200, {"Content-Type": "text/html"});
+                response.writeHead(200, {"Content-Type": "text/${ext}"});
                 html=fs.readFileSync(filename,'utf8');
                 response.end(html);
                 break;
