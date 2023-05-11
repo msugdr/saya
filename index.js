@@ -16,14 +16,15 @@ const server = http.createServer((request, response) => {
                     response.writeHead(200, {"Content-Type": "text/html"});      
                     fs.readFile(fn,'utf8', function(err, data) {
                         html=data;
-                        msg = `EDIT-6.1a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                        msg = `EDIT-6.21a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                         response.end(msg + html);           
                     });
                     break;
+                case "jpeg":
+                    break;
                 default:
-                //    fn="index.html";
                     response.writeHead(200, {"Content-Type": "text/html"});      
-                    msg = `EDIT-6.1b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                    msg = `EDIT-6.21b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                     response.end(msg);
             }
     }
@@ -37,3 +38,4 @@ server.listen(port);
 // EDIT-5.3 complete 5.2
 // EDIT-6 change if to switch
 // EDIT-6.1 complete 6
+// EDIT-6.21 complete 6
