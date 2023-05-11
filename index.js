@@ -11,9 +11,9 @@ const server = http.createServer((request, response) => {
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
         if (ext === 'html') {
-            response.writeHead(200, {"Content-Type": "text/html"}); 
+            response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile("index.html",'utf8', function(err, data) {html=data});
-            msg = `EDIT-2: method = ${request.method}, filename = ${filename}`;
+            msg = `EDIT: method = ${request.method}, filename = ${filename}`;
             response.end(msg + html);
         }
     }
