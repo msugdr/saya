@@ -14,7 +14,7 @@ const server = http.createServer((request, response) => {
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
             fs.readFile(fn,'utf8', function(err, data) {html=data});
-            msg = `EDIT-2.1:method = ${request.method}, ${filename}`;
+            msg = `EDIT-2.2:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg + html);
 //        }
 }
