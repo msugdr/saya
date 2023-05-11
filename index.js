@@ -12,20 +12,12 @@ const server = http.createServer((request, response) => {
         [file,ext]=filename.split(".");
             switch (ext) {
                 case "html":
-                    /*
-                    fn = filename;
-                    response.writeHead(200, {"Content-Type": "text/html"});      
-                    fs.readFile(fn,'utf8', function(err, data) {
-                        html=data;
-                        msg = `EDIT-7.1a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
-                        response.end(msg + html);           
-                    });
-                    */
                     response.writeHead(200, {"Content-Type": "text/html"});
                     html=fs.readFileSync(filename,'utf8');
                     response.end(html);
                     break;
-                case "jpg","png":
+                case "jpg":
+                case "png":
                     response.writeHead(200, {"Content-Type": `img/${ext}`});
                     var image = fs.readFileSync(filename, "binary");
                     response.end(image,"binary");
