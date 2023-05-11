@@ -10,7 +10,9 @@ const server = http.createServer((request, response) => {
     if (request.method === 'GET'){
         [dummy,filename]=request.url.split("/");
         [file,ext]=filename.split(".");
-        if (ext === "html"){
+//        if (ext === "html"){
+            switch (ext) {
+                case "html":
             fn="index.html";
             fn = filename;
             response.writeHead(200, {"Content-Type": "text/html"});      
@@ -19,11 +21,13 @@ const server = http.createServer((request, response) => {
                 msg = `EDIT-5.3a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                 response.end(msg + html);           
             });
-        } else {
+//        } else {
+            default:
             fn="index.html";
             response.writeHead(200, {"Content-Type": "text/html"});      
             msg = `EDIT-5.3b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
             response.end(msg);
+//        }
         }
 }
 });
@@ -34,3 +38,4 @@ server.listen(port);
 // EDIT-5.1 undo 5.1, response is written inside call back function of fs.readFile
 // EDIT-5.2 both 5 and 5.1
 // EDIT-5.3 complete 5.2
+// EDIT-6 change if to switch
