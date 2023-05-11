@@ -16,7 +16,7 @@ const server = http.createServer((request, response) => {
                     response.writeHead(200, {"Content-Type": "text/html"});      
                     fs.readFile(fn,'utf8', function(err, data) {
                         html=data;
-                        msg = `EDIT-7a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                        msg = `EDIT-7.1a:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                         response.end(msg + html);           
                     });
                     break;
@@ -27,7 +27,7 @@ const server = http.createServer((request, response) => {
                     break;
                 default:
                     response.writeHead(200, {"Content-Type": "text/html"});      
-                    msg = `EDIT-7b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
+                    msg = `EDIT-7.1b:method = ${request.method}, filename = ${filename}, ext = ${ext}`;
                     response.end(msg);
             }
     }
@@ -43,3 +43,4 @@ server.listen(port);
 // EDIT-6.1 complete 6
 // EDIT-6.21 complete 6
 // EDIT-7 add case jpg
+// EDIT-7.1 add jpg file
