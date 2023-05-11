@@ -18,6 +18,7 @@ const server = http.createServer((request, response) => {
                     break;
                 case "jpg":
                 case "png":
+                
                     response.writeHead(200, {"Content-Type": `img/${ext}`});
                     var image = fs.readFileSync(filename, "binary");
                     response.end(image,"binary");
