@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////
 const http = require('http');
 const fs = require('fs');
-var requestx = require('request');
+//var requestx = require('request');
 /*
 const TOKEN = "0maOvAs8dtXu8h7eEPMXGk2VqMcj6LEztSP9C7kudOg"
 const message = `これは
