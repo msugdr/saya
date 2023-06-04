@@ -26,11 +26,11 @@ function sendRequest (message) {
 
   requestx.post(options, (error, response, body) => {
     if (error) {
-      console.error(error);
+//      console.error(error);
       return;
     }
 
-    console.log(body);
+//    console.log(body);
   });
 }
 
