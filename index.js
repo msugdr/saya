@@ -4,6 +4,36 @@
 const http = require('http');
 const fs = require('fs');
 const requestx = require('request');
+const TOKEN = "0maOvAs8dtXu8h7eEPMXGk2VqMcj6LEztSP9C7kudOg"
+const message = `これは
+テスト
+ですよ`;
+
+sendRequest(message);
+
+
+function sendRequest (message) {
+  const options = {
+    uri: 'https://notify-api.line.me/api/notify',
+    headers: {
+      // TOKENを誤ってgitに上げてしまわないように、環境変数から取得するようにした
+      'Authorization': `Bearer ${TOKEN}`
+    },
+    form: {
+      message
+    }
+  };
+
+  requestx.post(options, (error, response, body) => {
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    console.log(body);
+  });
+}
+
 var html;
 var dummy;
 var filename;
