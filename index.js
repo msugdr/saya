@@ -6,9 +6,7 @@ const fs = require('fs');
 const requestx = require('request');
 
 const TOKEN = "0maOvAs8dtXu8h7eEPMXGk2VqMcj6LEztSP9C7kudOg"
-const message = `これは
-テスト
-ですよ`;
+const message = `これはテストですよ`;
 
 sendRequest(message);
 
@@ -70,6 +68,7 @@ const server = http.createServer((request, response) => {
             response.writeHead(200, {"Content-Type": "text/html"});
              console.log(data);
              response.end(data);
+          sendRequest(data);
             })
     }
 });
