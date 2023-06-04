@@ -19,7 +19,7 @@ function sendRequest (message) {
       'Authorization': `Bearer ${TOKEN}`
     },
     form: {
-      message
+      'message' : message
     }
   };
 
