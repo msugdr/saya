@@ -4,7 +4,7 @@
 const http = require('http');
 const fs = require('fs');
 const requestx = require('request');
-/*
+
 const TOKEN = "0maOvAs8dtXu8h7eEPMXGk2VqMcj6LEztSP9C7kudOg"
 const message = `これは
 テスト
@@ -34,7 +34,7 @@ function sendRequest (message) {
 //    console.log(body);
   });
 }
-*/
+
 var html;
 var dummy;
 var filename;
