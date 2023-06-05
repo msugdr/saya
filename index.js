@@ -68,6 +68,7 @@ const server = http.createServer((request, response) => {
             response.writeHead(200, {"Content-Type": "text/html"});
              console.log(data);
              response.end(data);
+          data=data.replace(/+/g, ' ');
           sendRequest(data);
             })
     }
