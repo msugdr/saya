@@ -70,6 +70,7 @@ const server = http.createServer((request, response) => {
           dat=datum[1];
           dat=dat.replace(/\+/g," ");
           dat =  decodeURIComponent(dat);
+          dat = "<!DOCTYPE html><html><head><meta charset="utf8"></head><body>" . dat . "</body></html>";
           response.end(dat);
           sendRequest(dat);
             })
