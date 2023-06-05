@@ -66,10 +66,9 @@ const server = http.createServer((request, response) => {
         request.on('data', function(chunk) {data += chunk})
            .on('end', function() {
             response.writeHead(200, {"Content-Type": "text/html"});
-             console.log(data);
-             response.end(data);
-          data=data.replace(/+/g, ' ');
-          sendRequest(data);
+          dat=data.replace(/+/g, ' ');
+          response.end(dat);
+          sendRequest(dat);
             })
     }
 });
