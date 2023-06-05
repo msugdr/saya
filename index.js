@@ -67,7 +67,8 @@ const server = http.createServer((request, response) => {
            .on('end', function() {
             response.writeHead(200, {"Content-Type": "text/html"});
  //         dat=data.replaceAll("+"," ");
-          dat=data.replace(/\+/g," ");
+          dat=data.replace(/\+/g," ")
+          dat =  decodeURIComponent(dat);
           response.end(dat);
           sendRequest(dat);
             })
