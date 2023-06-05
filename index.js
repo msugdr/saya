@@ -66,7 +66,7 @@ const server = http.createServer((request, response) => {
         request.on('data', function(chunk) {data += chunk})
            .on('end', function() {
             response.writeHead(200, {"Content-Type": "text/html"});
-          datum=data.slice("=");
+          datum=data.split("=");
           dat=datum[1];
           dat=data.replace(/\+/g," ")
           dat =  decodeURIComponent(dat);
